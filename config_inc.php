@@ -10,4 +10,4 @@ $g_database_name        = $matches[9];
 
 $g_db_type              = 'mysql';
 
-$g_file_upload_method   = DISK;
+//$g_file_upload_method   = DISK;
