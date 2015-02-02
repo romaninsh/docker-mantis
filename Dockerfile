@@ -20,10 +20,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
         wget \
         php-pear && rm -rf /var/lib/apt/lists/*
 
-
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
-        zip
-
 RUN sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php5/apache2/php.ini
 RUN sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php5/cli/php.ini
 
@@ -33,9 +29,9 @@ RUN a2enmod headers
 RUN mkdir -p /app && rm -fr /var/www/html && ln -s /app /var/www/html
 
 # Install vanilla MantisBT
-RUN wget http://sourceforge.net/projects/mantisbt/files/latest/download -O /mantisbt.zip
-RUN unzip /mantisbt.zip
-RUN cp -aR /wordpress/* /app
+RUN wget http://sourceforge.net/projects/mantisbt/files/mantis-stable/1.2.19/mantisbt-1.2.19.tar.gz/download -O /mantisbt.tar.gz
+RUN tar -zvxf /mantisbt.tar.gz
+RUN cp -aR /mantisbt-*/* /app
 RUN chown -R www-data:www-data /app
 
 # Use our default config
