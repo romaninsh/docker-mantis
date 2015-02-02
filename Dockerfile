@@ -17,6 +17,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
         php5-ldap \
         php5-gd \
         php5-curl \
+        wget \
         php-pear && rm -rf /var/lib/apt/lists/*
 
 RUN sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php5/apache2/php.ini
