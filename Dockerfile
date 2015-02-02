@@ -28,7 +28,7 @@ RUN a2enmod headers
 RUN mkdir -p /app && rm -fr /var/www/html && ln -s /app /var/www/html
 
 # Install vanilla MantisBT
-ADD http://sourceforge.net/projects/mantisbt/files/latest/download /mantisbt.zip
+RUN wget http://sourceforge.net/projects/mantisbt/files/latest/download -O /mantisbt.zip
 RUN tar xvzf /mantisbt.tar.gz
 RUN cp -aR /wordpress/* /app
 RUN chown -R www-data:www-data /app
