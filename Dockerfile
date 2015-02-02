@@ -22,7 +22,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
 
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
-        unzip
+        zip
 
 RUN sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php5/apache2/php.ini
 RUN sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php5/cli/php.ini
