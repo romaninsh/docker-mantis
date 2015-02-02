@@ -20,6 +20,10 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
         wget \
         php-pear && rm -rf /var/lib/apt/lists/*
 
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
+        unzip
+
 RUN sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php5/apache2/php.ini
 RUN sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php5/cli/php.ini
 
