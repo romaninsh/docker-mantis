@@ -30,7 +30,7 @@ RUN mkdir -p /app && rm -fr /var/www/html && ln -s /app /var/www/html
 
 # Install vanilla MantisBT
 RUN wget http://sourceforge.net/projects/mantisbt/files/latest/download -O /mantisbt.zip
-RUN tar xvzf /mantisbt.tar.gz
+RUN tar xvzf /mantisbt.zip
 RUN cp -aR /wordpress/* /app
 RUN chown -R www-data:www-data /app
 
